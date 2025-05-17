@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+td {
+  background-color: #ffffff;
+}
+
+td.valid {
+  background-color: #c8e6c9; /* Light green for valid */
+}
+
+td.invalid {
+  background-color: #ffccbc; /* Light red for invalid */
+}
+
+#resultTable {
+  display: none;
+  margin-top: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 16px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+details summary {
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 0.3em 0;
+}
+
+details[open] summary::after {
+  content: "▲";
+  float: right;
+  font-size: 0.8em;
+}
+
+details summary::after {
+  content: "▼";
+  float: right;
+  font-size: 0.8em;
+}
+
+#tamperDiff {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 1em;
+  margin-top: 1em;
+}

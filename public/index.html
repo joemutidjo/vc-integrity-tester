@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VC Integrity Tester</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1>VC Integrity Tester</h1>
+
+      <form id="vcForm" enctype="multipart/form-data" class="mb-3">
+        <label for="vc">Upload your VC JSON file:</label>
+        <input type="file" id="vc" name="vc" accept=".json" required />
+        <button type="submit">Verify</button>
+      </form>
+
+      <!-- Modal Trigger Link -->
+      <p class="mb-4">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#techOverviewModal">
+          🧠 Open Technical Overview
+        </a>
+      </p>
+
+      <h5>Sample VC Files</h5>
+      <ul>
+        <li><a href="university-vc.json" download>Download Valid VC</a></li>
+        <li><a href="tampered-vc.json" download>Download Tampered VC</a></li>
+      </ul>
+
+      <div id="results" style="display: none">
+        <h2>Summary</h2>
+        <ul id="summaryList"></ul>
+
+        <details open>
+          <summary><h3>VC Structure Validation</h3></summary>
+          <div id="structureDetails"></div>
+        </details>
+
+        <details open>
+          <summary><h3>JWT Header and Payload</h3></summary>
+          <div id="jwtDetails"></div>
+        </details>
+
+        <details open>
+          <summary><h3>DID Resolution</h3></summary>
+          <pre id="didOutput" style="white-space: pre-wrap"></pre>
+        </details>
+
+        <details open>
+          <summary><h3>Tamper Diff</h3></summary>
+          <div id="tamperDiff"></div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Placeholder for dynamically loaded modal -->
+    <div id="techModalContainer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main Client Logic -->
+    <script src="client.js"></script>
+
+    <!-- Dynamically Load Modal HTML -->
+    <script>
+      fetch('tech-overview.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('techModalContainer').innerHTML = html;
+        })
+        .catch(err => {
+          console.error('Failed to load modal content:', err);
+        });
+    </script>
+  </body>
+</html>

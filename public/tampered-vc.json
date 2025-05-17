@@ -1,0 +1,28 @@
+{
+  "credentialHash": "7ef75660790c18bef729f04eeb3d776c6033ec53e94aa7c29b1bf57b850086ae",
+  "credentialSubject": {
+    "name": "Joseph Mutidjo",
+    "degree": {
+      "type": "BachelorDegree",
+      "name": "Bachelor of Arts in English"
+    },
+    "university": "University at Buffalo",
+    "graduationDate": "1999-05-01",
+    "honors": "Summa Cum Laude"
+  },
+  "issuer": {
+    "id": "did:ethr:sepolia:0x874EBfC76A5A17EB94E9E8fD3bde807514c4828b"
+  },
+  "type": [
+    "VerifiableCredential",
+    "UniversityDegreeCredential"
+  ],
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1"
+  ],
+  "issuanceDate": "2025-05-13T05:14:58.000Z",
+  "proof": {
+    "type": "JwtProof2020",
+    "jwt": "eyJhbGciOiJFUzI1NksiLCJ0eXAiOiJKV1QifQ.eyJ2YyI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvMjAxOC9jcmVkZW50aWFscy92MSJdLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiVW5pdmVyc2l0eURlZ3JlZUNyZWRlbnRpYWwiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsibmFtZSI6Ikpvc2VwaCBNdXRpZGpvIiwiZGVncmVlIjp7InR5cGUiOiJCYWNoZWxvckRlZ3JlZSIsIm5hbWUiOiJCYWNoZWxvciBvZiBBcnRzIGluIEVuZ2xpc2gifSwidW5pdmVyc2l0eSI6IlVuaXZlcnNpdHkgYXQgQnVmZmFsbyIsImdyYWR1YXRpb25EYXRlIjoiMTk5OS0wNS0wMSJ9fSwiY3JlZGVudGlhbEhhc2giOiI3ZWY3NTY2MDc5MGMxOGJlZjcyOWYwNGVlYjNkNzc2YzYwMzNlYzUzZTk0YWE3YzI5YjFiZjU3Yjg1MDA4NmFlIiwibmJmIjoxNzQ3MTEzMjk4LCJpc3MiOiJkaWQ6ZXRocjpzZXBvbGlhOjB4ODc0RUJmQzc2QTVBMTdFQjk0RTlFOGZEM2JkZTgwNzUxNGM0ODI4YiJ9.T-hBH0qWcNUIXbktyLuMI3vkHbk_DOQ28Glpw47LN5lTbv8m5vHNep6OR0F17h5RqQs1gFs8tlu7eZKjWiF7RQ"
+  }
+}

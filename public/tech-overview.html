@@ -1,0 +1,82 @@
+<!-- tech-overview.html -->
+<div
+  class="modal fade"
+  id="techOverviewModal"
+  tabindex="-1"
+  aria-labelledby="techOverviewModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="techOverviewModalLabel">
+          🧠 How It Works — Technical Overview
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>🔐 1. JWT Signature Verification</strong></p>
+        <p>I use <code>did-jwt</code> and <code>@veramo/core</code> to:</p>
+        <ul>
+          <li>Decode the JWT embedded in <code>proof.jwt</code></li>
+          <li>Resolve the issuer’s DID</li>
+          <li>Verify the ECDSA signature (secp256k1)</li>
+        </ul>
+
+        <p><strong>🏗 2. Custom Ethereum DID Setup on Sepolia</strong></p>
+        <ul>
+          <li>🧾 Registry address: <code>0x731Eb3162AEc536D412C967334FeC920147C1534</code></li>
+          <li>🆔 My on-chain DID: <code>did:ethr:sepolia:0x874EBfC76A5A17EB94E9E8fD3bde807514c4828b</code></li>
+        </ul>
+        <p>I registered this DID using Veramo’s agent tooling and anchored my key metadata to the registry. This enables signature verification to rely on on-chain public key resolution.</p>
+
+        <p><strong>✍️ 3. Credential Issuance</strong></p>
+        <p>I used Veramo’s <code>createVerifiableCredential</code> API with <code>proofFormat: 'jwt'</code>.</p>
+        <ul>
+          <li>Constructed a <code>credentialSubject</code></li>
+          <li>Canonicalized and hashed with SHA-256</li>
+          <li>Embedded the hash in the JWT payload as <code>credentialHash</code></li>
+        </ul>
+        <p>Then I signed it with my on-chain DID. The VC was saved to a <code>.json</code> file.</p>
+
+        <p><strong>🧾 4. Credential Hash Integrity</strong></p>
+        <ul>
+          <li>✅ Matching hash: content is unchanged</li>
+          <li>❌ Mismatch: tampering detected</li>
+        </ul>
+
+        <p><strong>🧬 5. Field-Level Tamper Detection</strong></p>
+        <p>When a mismatch is found, I compare the signed and uploaded data using a custom diff engine that shows:</p>
+        <ul>
+          <li>🟢 Added fields</li>
+          <li>🔴 Removed fields</li>
+          <li>🟡 Changed values</li>
+        </ul>
+
+        <p><strong>🧰 6. Standards & Stack</strong></p>
+        <ul>
+          <li>Veramo: DID & VC management</li>
+          <li>EthereumDIDRegistry: On-chain DID anchoring (Sepolia)</li>
+          <li>AJV: VC schema validation</li>
+          <li>Node.js + crypto: Hashing and web server</li>
+          <li>did-jwt: Signature verification</li>
+          <li>Vanilla JS UI: Local and transparent for developers</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

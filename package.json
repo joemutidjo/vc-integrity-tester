@@ -1,15 +1,26 @@
 {
-  "name": "nodejs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "vc-integrity-tester",
+  "version": "0.0.2",
+  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@types/node": "^22.13.11"
+    "@veramo/core": "^4.0.1",
+    "@veramo/credential-w3c": "^4.0.1",
+    "@veramo/did-manager": "^4.0.1",
+    "@veramo/did-provider-ethr": "^4.0.1",
+    "@veramo/did-resolver": "^4.0.1",
+    "@veramo/key-manager": "^4.0.1",
+    "@veramo/kms-local": "^4.0.1",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "did-jwt": "^8.0.14",
+    "did-resolver": "^4.0.0",
+    "ethers": "^6.14.0",
+    "ethr-did-resolver": "^6.0.0",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1"
   }
 }
